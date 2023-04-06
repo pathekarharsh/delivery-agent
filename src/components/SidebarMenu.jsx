@@ -51,7 +51,7 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
   return (
     <>
       <div className="menu" onClick={toggleMenu}>
-        <div className="menu_item transition duration-300 ease-in-out hover:scale-110">
+        <div className="menu_item ml-1 transition duration-300 ease-in-out hover:scale-110">
           <div className="icon">{route.icon}</div>
           <AnimatePresence>
             {isOpen && (
@@ -72,8 +72,8 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
             animate={
               isMenuOpen
                 ? {
-                    rotate: -90,
-                  }
+                  rotate: -90,
+                }
                 : { rotate: 0 }
             }
           >

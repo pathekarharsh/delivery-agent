@@ -207,7 +207,7 @@ const SideBar = ({ children }) => {
                 <NavLink
                   to={route.path}
                   key={index}
-                  className="link"
+                  className="link transition duration-300 ease-in-out hover:scale-110 ml-1"
                   activeClassName="active"
                 >
                   <div className="icon">{route.icon}</div>

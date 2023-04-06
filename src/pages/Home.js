@@ -10,13 +10,7 @@ export default function Home() {
 
 
     return (
-        <div >
-            {/* className='mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-5 justify-center' */}
-            {/* {titlearray.map((obj) => {
-                return (
-                    <HomeCard title={obj.title} path={obj.path} />
-                )
-            })} */}
+        <div className='bg-gray-300 m-0 p-0 justify-center w-full'>
             <h1 className='p-64 m-24 font-bold text-4xl text-center'>Welcome to the Admin Dashboard</h1>
         </div>
     )

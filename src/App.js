@@ -13,6 +13,8 @@ import AddDeliveryAgent from './components/forms/AddDeliveryAgent';
 import AddInventoryManager from './components/forms/AddInventoryManager';
 import AddProducts from './components/forms/AddProducts';
 import SideBar from './components/SideBar';
+import AddCategory from './components/forms/AddCategory';
+import AddSubcategory from './components/forms/AddSubcategory';
 // import AddProductCategory from './components/forms/AddProductCategory';
 // import AddProductItem from './components/forms/AddProductItem';
 
@@ -28,9 +30,8 @@ function App() {
         <SideBar />
         <Routes>
           <Route exact path='/Home' element={<Home />} />
-
-          <Route exact path="/addcategory" />
-          <Route exact path="/addsubcategory" />
+          <Route exact path="/addcategory" element={<AddCategory />} />
+          <Route exact path="/addsubcategory" element={<AddSubcategory />} />
           <Route exact path="/addproduct" element={<AddProducts />} />
           <Route exact path="/viewproducts" element={<Products />} />
 
