@@ -1,93 +1,101 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
-import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
+import { FaBars, FaHome, FaUser } from "react-icons/fa";
+import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsCartCheck } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+import { VscPreview } from "react-icons/vsc";
+import { GrAddCircle } from "react-icons/gr";
+import { MdDeliveryDining } from "react-icons/md";
+import { MdOutlineInventory2 } from "react-icons/md";
+import { BiSearch } from "react-icons/bi";
 
 
 
 const routes = [
   {
     path: "/Home",
-    name: "Dashboard",
+    name: "Home",
     icon: <FaHome />,
   },
   {
     path: "/products",
     name: "Products",
-    icon: <FaUser />,
+    icon: <MdProductionQuantityLimits />,
     subRoutes: [
       {
         path: "/addcategory",
         name: "Add Category ",
-        icon: <FaUser />,
+        icon: <GrAddCircle />,
       },
       {
         path: "/addsubcategory",
         name: "Add SubCategory",
-        icon: <FaLock />,
+        icon: <GrAddCircle />,
       },
       {
-        path: "/AddProducts",
+        path: "/addproduct",
         name: "Add Product",
-        icon: <FaMoneyBill />,
+        icon: <GrAddCircle />,
       },
     ],
   },
   {
-    path: "/category",
+    path: "/viewproducts",
     name: "View Products",
-    icon: <MdMessage />,
+    icon: <VscPreview />,
   },
   {
     path: "/",
     name: "Delivery Agent",
-    icon: <BiAnalyse />,
+    icon: <MdDeliveryDining />,
     subRoutes: [
       {
-        path: "/AddDeliveryAgent",
+        path: "/adddeliveryagent",
         name: "Add Delivery Agent ",
-        icon: <FaUser />,
+        icon: <GrAddCircle />,
       },
       {
-        path: "/delivery",
+        path: "/viewdeliveryagents",
         name: "View Delivery Agents",
-        icon: <FaLock />,
+        icon: <VscPreview />,
       },
     ],
   },
   {
     path: "/",
     name: "Inventory Manager",
-    icon: <AiTwotoneFileExclamation />,
+    icon: <MdOutlineInventory2 />,
     subRoutes: [
       {
-        path: "/AddInventoryManager",
+        path: "/addinventorymanager",
         name: "Add Inventory Manager",
-        icon: <FaUser />,
+        icon: <GrAddCircle />,
       },
       {
-        path: "/ViewInventoryManagers",
+        path: "/viewinventorymanagers",
         name: "View Inventory Manager",
-        icon: <FaLock />,
+        icon: <VscPreview />,
       },
     ],
   },
   {
-    path: "/order",
+    path: "/vieworders",
     name: "Order",
     icon: <BsCartCheck />,
   },
 ];
 
-const SideBar2 = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+
+
+
+
+const SideBar = ({ children }) => {
+
+  const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
+
   const inputAnimation = {
     hidden: {
       width: 0,
@@ -97,7 +105,7 @@ const SideBar2 = ({ children }) => {
       },
     },
     show: {
-      width: "140px",
+      width: "165px",
       padding: "5px 15px",
       transition: {
         duration: 0.2,
@@ -122,12 +130,14 @@ const SideBar2 = ({ children }) => {
     },
   };
 
+
+  // return components
   return (
     <div className="bg-gray-200 text-black">
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? "217px" : "45px",
 
             transition: {
               duration: 0.5,
@@ -226,4 +236,5 @@ const SideBar2 = ({ children }) => {
   );
 };
 
-export default SideBar2;
+
+export default SideBar;

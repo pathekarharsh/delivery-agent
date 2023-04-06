@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import '../App.css';
 
 
-export default function Categories() {
+export default function Products() {
     return (
         <div className='mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-1 justify-center'>
             <Card title="Apple" image="https://cdn.britannica.com/22/187222-050-07B17FB6/apples-on-a-tree-branch.jpg"/>
