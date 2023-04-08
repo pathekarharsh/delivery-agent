@@ -18,7 +18,7 @@ export default function AddCategory() {
 
     return (
         <div className='w-full'>
-            <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage'/>
+            <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage' />
             {/* printing submitted data on screen */}
             <pre>{JSON.stringify(userInfo, undefined, 2)}</pre>
 
@@ -28,14 +28,14 @@ export default function AddCategory() {
                     <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
                         {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
                         <h2 className='text-center font-bold font-mono text-2xl'>CATEGORIES</h2>
-                        <hr className='w-48 mt-2 border-2 mx-auto'/>
+                        <hr className='w-48 mt-2 border-2 mx-auto' />
                         <div className='flex flex-col py-2'>
                             <label>Enter a Category</label>
                             <input className='border p-2 mt-2 rounded-md' type="text" name='category' placeholder='Enter Category' {...register('category', { required: true })} />
                         </div>
                         <p className='text-red-600'> {errors.category && "Category is required"}</p>
 
-                        <button className='border w-full mt-2 mb-2 rounded-md py-2 bg-indigo-600 hover:bg-indigo-500 text-white'>ADD CATEGORY</button>
+                        <button className='font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-primary hover:bg-indigo-500 text-black'>ADD CATEGORY</button>
                     </form>
                 </div>
             </div>

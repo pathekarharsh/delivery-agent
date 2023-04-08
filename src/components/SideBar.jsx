@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaBars, FaHome, FaUser } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsCartCheck } from "react-icons/bs";
@@ -15,7 +15,7 @@ import { BiSearch } from "react-icons/bi";
 
 const routes = [
   {
-    path: "/Home",
+    path: "/dashboard/home",
     name: "Home",
     icon: <FaHome />,
   },
@@ -25,63 +25,63 @@ const routes = [
     icon: <MdProductionQuantityLimits />,
     subRoutes: [
       {
-        path: "/addcategory",
+        path: "/dashboard/addcategory",
         name: "Add Category ",
         icon: <GrAddCircle />,
       },
       {
-        path: "/addsubcategory",
+        path: "/dashboard/addsubcategory",
         name: "Add SubCategory",
         icon: <GrAddCircle />,
       },
       {
-        path: "/addproduct",
+        path: "/dashboard/addproduct",
         name: "Add Product",
         icon: <GrAddCircle />,
       },
     ],
   },
   {
-    path: "/viewproducts",
+    path: "/dashboard/viewproducts",
     name: "View Products",
     icon: <VscPreview />,
   },
   {
-    path: "/",
+    path: "/delivery",
     name: "Delivery Agent",
     icon: <MdDeliveryDining />,
     subRoutes: [
       {
-        path: "/adddeliveryagent",
+        path: "/dashboard/adddeliveryagent",
         name: "Add Delivery Agent ",
         icon: <GrAddCircle />,
       },
       {
-        path: "/viewdeliveryagents",
+        path: "/dashboard/viewdeliveryagents",
         name: "View Delivery Agents",
         icon: <VscPreview />,
       },
     ],
   },
   {
-    path: "/",
+    path: "/inventory",
     name: "Inventory Manager",
     icon: <MdOutlineInventory2 />,
     subRoutes: [
       {
-        path: "/addinventorymanager",
+        path: "/dashboard/addinventorymanager",
         name: "Add Inventory Manager",
         icon: <GrAddCircle />,
       },
       {
-        path: "/viewinventorymanagers",
+        path: "/dashboard/viewinventorymanagers",
         name: "View Inventory Manager",
         icon: <VscPreview />,
       },
     ],
   },
   {
-    path: "/vieworders",
+    path: "/dashboard/vieworders",
     name: "Order",
     icon: <BsCartCheck />,
   },
@@ -133,6 +133,8 @@ const SideBar = ({ children }) => {
 
   // return components
   return (
+    <>
+
     <div className="bg-gray-200 text-black">
       <div className="main-container">
         <motion.div
@@ -158,7 +160,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  <h2 className='text-xl font-bold text-center flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2>
+                  <h2 className='text-xl font-bold text-center flex justify-center'>Groccery</h2>
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -233,6 +235,8 @@ const SideBar = ({ children }) => {
         <main>{children}</main>
       </div>
     </div>
+    <Outlet/>
+    </>
   );
 };
 
