@@ -38,6 +38,8 @@ const info = [
 
 ];
 
+
+
 const ProductDetails = () => {
   return (
     <div className="queue-page border-2 rounded-md bg-tailtertiary m-0">
@@ -55,7 +57,7 @@ const ProductDetails = () => {
               <Link to="/" className="font-poppins font-bold  border-2 w-full mr-2 mt-2 mb-2 rounded-md p-2 bg-tailprimary hover:bg-tailtertiary text-black">
                 VIEW
               </Link>
-              <Link to="/" className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 rounded-md p-2 bg-tailprimary hover:bg-tailtertiary text-black">
+              <Link to="/dashboard/editproduct" className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 rounded-md p-2 bg-tailprimary hover:bg-tailtertiary text-black">
                 EDIT
               </Link>
               <Link to="/" className="font-poppins font-bold  border-2 w-full mt-2 mb-2 rounded-md p-2 bg-tailprimary hover:bg-red-700 text-black">

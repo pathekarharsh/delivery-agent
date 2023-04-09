@@ -60,7 +60,7 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="link_text"
+                className="link_text ease-in-out"
               >
                 {route.name}
               </motion.div>
@@ -92,7 +92,7 @@ const SidebarMenu = ({ route, showAnimation, isOpen, setIsOpen }) => {
           >
             {route.subRoutes.map((subRoute, i) => (
               <motion.div variants={menuItemAnimation} key={i} custom={i}>
-                <NavLink to={subRoute.path} className="link  transition duration-300 ease-in-out hover:scale-110">
+                <NavLink to={subRoute.path} className="link transition duration-300 ease-in-out hover:scale-110">
                   <div className="icon">{subRoute.icon}</div>
                   <motion.div className="link_text">{subRoute.name}</motion.div>
                 </NavLink>

@@ -22,6 +22,7 @@ import DeliveryPage from './pages/DeliveryPage';
 import InventoryPage from './pages/InventoryPage';
 import EditDeliveryAgent from './components/forms/EditDeliveryAgent';
 import EditInventoryManager from './components/forms/EditInventoryManager';
+import EditProduct from './components/forms/EditProduct';
 
 
 
@@ -93,6 +94,7 @@ function App() {
 
             <Route exact path="editdeliveryagent" element={<EditDeliveryAgent/>}/>
             <Route exact path="editinventorymanager" element={<EditInventoryManager/>} />
+            <Route exact path="editproduct" element={<EditProduct/>} />
           </Route>
 
 

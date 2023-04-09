@@ -16,6 +16,13 @@ export default function AddSubcategory() {
     };
     console.log(errors);
 
+    const [catarray, setcatarray] = useState([
+        { id: 1, category: 'fruits' },
+        { id: 2, category: 'vegetables' },
+        { id: 3, category: 'dairy' },
+        { id: 4, category: 'meat' },
+    ])
+
     return (
         <div className='w-full'>
                         <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage'/>
@@ -27,7 +34,6 @@ export default function AddSubcategory() {
                 <div className='border border-2 rounded-md max-w-lg mx-auto justify-center shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
 
                     <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
-                        {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
                         <h2 className='text-center font-bold font-mono text-2xl'>SUB-CATEGORIES</h2>
                         <hr className='w-56 my-2 border-2 mx-auto' />
 
@@ -35,10 +41,9 @@ export default function AddSubcategory() {
                             <label>Choose a Category</label>
                             {/* <input className='border p-2 mt-1 rounded-md' type="text" name='subcategory' placeholder='Enter Sub Category' {...register('subcategory', { required: true })}/> */}
                             <select name="category" className='border px-2 py-2 mt-1 w-full rounded-md' {...register('category', { required: true })}>
-                                <option value="fruits">Fruits</option>
-                                <option value="vegetables">Vegetables</option>
-                                <option value="dairy">Dairy</option>
-                                <option value="meat">Meat</option>
+                                {catarray.map((cat) => (
+                                    <option key={cat.id} value={cat.category}>{cat.category}</option>
+                                ))}
                             </select>
                         </div>
                         <p className='text-red-600'> {errors.category && "Category is required"}</p>
