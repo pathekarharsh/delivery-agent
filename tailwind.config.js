@@ -5,14 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        primary: "#27C690",
-        secondary: "#9CB2AA",
-        tertiary: "#B2D8CB",
+      colors: {
+        tailprimary: "#27C690",
+        tailsecondary: "#9CB2AA",
+        tailtertiary: "#B2D8CB",
         bgprimary: "#FAFCFF",
-        bgsecondary: "#E3FAFB",
+        bgsecondary: "#E3FAFB",
       },
-      fontFamily:{
+      fontFamily: {
         roboto: ["Roboto", "ui-sans-serif"],
         poppins: ["Poppins", "ui-sans-serif"],
         lato: ["Lato", "SFMono-ui-monospace"],

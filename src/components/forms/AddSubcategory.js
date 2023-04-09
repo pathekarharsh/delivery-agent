@@ -50,7 +50,7 @@ export default function AddSubcategory() {
                         <p className='text-red-600'> {errors.subcategory && "Sub Category is required"}</p>
 
 
-                        <button className='border w-full rounded-md mt-3 mb-2 py-2 bg-indigo-600 hover:bg-indigo-500 text-white'>ADD SUB-CATEGORY</button>
+                        <button className='font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD SUB-CATEGORY</button>
                     </form>
                 </div>
             </div>

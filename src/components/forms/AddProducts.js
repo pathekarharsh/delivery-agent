@@ -73,7 +73,7 @@ export default function AddProducts() {
                         </div>
                         <p className='text-red-600'>{errors.productimage && "Product Image is required"}</p>
 
-                        <button className='border w-36 mt-4 mb-2 p-2 bg-indigo-600 hover:bg-indigo-500 text-white'>ADD PRODUCT</button>
+                        <button className='font-poppins font-bold border w-full mt-3 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD PRODUCT</button>
                     </form>
                 </div>
             </div>

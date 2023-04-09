@@ -1,13 +1,13 @@
-import Nav from './components/Nav';
-import Products from './pages/Products';
-import Home from './pages/Home';
 import { useState } from 'react';
-import Delivery from './pages/Delivery';
 import {
   BrowserRouter as Router,
   Route, Routes, Outlet,
   createBrowserRouter, createRoutesFromElements
 } from "react-router-dom";
+import Modal from 'react-modal';
+
+import Home from './pages/Home';
+import ProductPage from './pages/ProductPage';
 import AdminLogin from './components/forms/AdminLogin';
 import AddDeliveryAgent from './components/forms/AddDeliveryAgent';
 import AddInventoryManager from './components/forms/AddInventoryManager';
@@ -17,7 +17,13 @@ import AddCategory from './components/forms/AddCategory';
 import AddSubcategory from './components/forms/AddSubcategory';
 // import AddProductCategory from './components/forms/AddProductCategory';
 // import AddProductItem from './components/forms/AddProductItem';
-import Modal from 'react-modal';
+import OrderPage from './pages/OrderPage';
+import DeliveryPage from './pages/DeliveryPage';
+import InventoryPage from './pages/InventoryPage';
+import EditDeliveryAgent from './components/forms/EditDeliveryAgent';
+import EditInventoryManager from './components/forms/EditInventoryManager';
+
+
 
 Modal.setAppElement('#root');
 
@@ -58,7 +64,7 @@ function App() {
   // }
 
   return (
-    <div className='flex'>
+    <div className='flex font-poppins'>
 
       <Router>
         {/* <SideBar /> */}
@@ -69,21 +75,24 @@ function App() {
             <Route exact path="addcategory" element={<AddCategory />} />
             <Route exact path="addsubcategory" element={<AddSubcategory />} />
             <Route exact path="addproduct" element={<AddProducts />} />
-            <Route exact path="viewproducts" element={<Products />} />
+            <Route exact path="viewproducts" element={<ProductPage />} />
 
             <Route exact path="adddeliveryagent" element={<AddDeliveryAgent />} />
             {/* <Route exact path="viewdeliveryagents" element={<Delivery shouldDelete={shouldDelete} result={result} />} /> */}
-            <Route exact path="viewdeliveryagents" element={<Delivery />} />
+            <Route exact path="viewdeliveryagents" element={<DeliveryPage />} />
 
             <Route exact path="addinventorymanager" element={<AddInventoryManager />} />
-            <Route exact path="viewinventorymanagers" />
+            <Route exact path="viewinventorymanagers" element={<InventoryPage/>}/>
 
-            <Route exact path="vieworders" />
+            <Route exact path="vieworders" element={<OrderPage />} />
             <Route exact path="updateproduct" />
             {/* <Route exact path="/updatecategory" />
           <Route exact path="/updatesubcategory" /> */}
             <Route exact path="updateinventorymanager" />
             <Route exact path="updatedeliveryagent" />
+
+            <Route exact path="editdeliveryagent" element={<EditDeliveryAgent/>}/>
+            <Route exact path="editinventorymanager" element={<EditInventoryManager/>} />
           </Route>
 
 

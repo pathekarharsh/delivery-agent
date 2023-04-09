@@ -135,11 +135,11 @@ const SideBar = ({ children }) => {
   return (
     <>
 
-    <div className="bg-gray-200 text-black">
+    <div className="bg-white text-black">
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "217px" : "45px",
+            width: isOpen ? "230px" : "45px",
 
             transition: {
               duration: 0.5,

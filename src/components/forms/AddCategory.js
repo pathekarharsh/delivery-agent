@@ -35,7 +35,7 @@ export default function AddCategory() {
                         </div>
                         <p className='text-red-600'> {errors.category && "Category is required"}</p>
 
-                        <button className='font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-primary hover:bg-indigo-500 text-black'>ADD CATEGORY</button>
+                        <button className='font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD SUB-CATEGORY</button>
                     </form>
                 </div>
             </div>

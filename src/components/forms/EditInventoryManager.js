@@ -5,7 +5,7 @@ import '../../App.css';
 
 
 
-export default function AddInventoryManager() {
+export default function EditInventoryManager() {
 
     const { register, handleSubmit,  formState: { errors } } = useForm();
 
@@ -57,7 +57,7 @@ export default function AddInventoryManager() {
                         </div>
                         <p className='text-red-600'>{errors.managerimage && "Inventory Manager Image is required"}</p>
 
-                        <button className='font-poppins font-bold border w-full mt-3 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD INVENTORY MANAGER</button>
+                        <button className='font-poppins font-bold border w-full mt-3 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>EDIT INVENTORY MANAGER</button>
                     </form>
                 </div>
             </div>
