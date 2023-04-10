@@ -18,14 +18,14 @@ export default function AddCategory() {
 
 
 
-    const [catobj, setcatobj] = useState({category:''});
-    const handleSubmit=(e)=>{
+    const [catobj, setcatobj] = useState({ category: '' });
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log(catobj);
     }
 
-    const onChange=(e)=>{
-        setcatobj({...catobj,[e.target.name]:e.target.value});
+    const onChange = (e) => {
+        setcatobj({ ...catobj, [e.target.name]: e.target.value });
     }
 
 
