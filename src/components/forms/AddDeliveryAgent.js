@@ -33,27 +33,27 @@ export default function AddDeliveryAgent() {
 
                         <div className='flex flex-col py-2'>
                             <label>Name</label>
-                            <input className='mt-1 border p-2 rounded-md' type="text" name='name' placeholder='Enter Name' {...register('name', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="text" name='name' placeholder='Enter Name' {...register('name', { required: true })}/>
                         </div>
                         <p className='text-red-600'> {errors.name && "Delivery Agent Name is required"}</p>
 
 
                         <div className='flex flex-col py-2'>
                             <label>Email</label>
-                            <input className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })}/>
                         </div>
                         <p className='text-red-600'>{errors.email && "Delivery Agent Email is required"}</p>
 
 
                         <div className='flex flex-col py-2'>
                             <label>Contact Number</label>
-                            <input className='mt-1 border p-2 rounded-md' type="text" name='contact' placeholder='Enter Contact Number' {...register('contact', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="text" name='contact' placeholder='Enter Contact Number' {...register('contact', { required: true })}/>
                         </div>
                         <p className='text-red-600'> {errors.contact && "Delivery Agent Contact Number is required"}</p>
 
                         <div className='flex flex-col py-2'>
                             <label>Upload Delivery Agent Image</label>
-                            <input className='mt-1 border p-2 rounded-md' type="file" name="agentimage" {...register('agentimage', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="file" name="agentimage" {...register('agentimage', { required: true })}/>
                         </div>
                         <p className='text-red-600'>{errors.agentimage && "Delivery Agent Image is required"}</p>
 

@@ -42,14 +42,14 @@ export default function AdminLogin({ update, login }) {
                         
                         <div className='flex flex-col py-2'>
                             <label>Email</label>
-                            <input className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })}/>
                         </div>
                         <p className='text-red-600'>{errors.email && "Email is required"}</p>
 
 
                         <div className='flex flex-col py-2'>
                             <label>Password</label>
-                            <input className='mt-1 border p-2 rounded-md' type="password" name='password' placeholder='Enter Name' {...register('name', { required: true },{minLength:4})}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="password" name='password' placeholder='Enter Name' {...register('name', { required: true },{minLength:4})}/>
                         </div>
                         <p className='text-red-600'> {errors.password && "Password is required"}</p>
 

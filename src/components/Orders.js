@@ -49,12 +49,12 @@ const orders = [
 const Orders = () => {
   return (
     <div className="queue-page border-2 rounded-md bg-tailtertiary m-0">
-      <div className="order-row">
-        <div className="order-row-title">Order Number</div>
-        <div className="order-row-title">Items</div>
-        <div className="order-row-title">Buttons</div>
-      </div>
       <div className="orders-container">
+      <div className="flex pl-3 py-3 justify-between pr-20 font-poppins font-bold text-teal-200 bg-black ">
+          <h2>ORDER ID</h2>
+          <h2>ORDER MENU</h2>
+          <h2>OPTIONS</h2>
+        </div>
         {orders.map((order) => (
           <div key={order.orderNumber} className="order-card link hover:transition-all bg-white duration-300 ease-in-out font-poppins font-bold m-0 px-2 py-0">
             <h2>Order #{order.orderNumber}</h2>

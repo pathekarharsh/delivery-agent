@@ -10,17 +10,6 @@ export default function EditDeliveryAgent() {
 
     const navigate = useNavigate();
 
-
-    // const { register, handleSubmit, formState: { errors } } = useForm();
-
-    // const [userInfo, setUserInfo] = useState();
-
-    // const onSubmit = (data) => {
-    //     setUserInfo(data);
-    //     console.log(data);
-    // };
-    // console.log(errors);
-
     const [obj, setobj] = useState({
         name: '',
         email: '',
@@ -40,18 +29,9 @@ export default function EditDeliveryAgent() {
 
     return (
         <div className=''>
-            {/* <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage' /> */}
-
-            {/* printing submitted data on screen */}
-            {/* <pre className='text-white'>{JSON.stringify(obj, undefined, 2)}</pre> */}
-
-
-
-
             <div className='p-2 mx-auto rounded overflow-hidden'>
                 <div className='border border-2 rounded-md max-w-lg mx-auto justify-center shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
                     <form className='mx-auto bg-white p-4' onSubmit={handleSubmit}>
-                        {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
                         <h2 className='text-center font-bold font-mono text-2xl'>DELIVERY AGENT</h2>
                         <hr className='w-36 mt-2 border-2 mx-auto' />
 

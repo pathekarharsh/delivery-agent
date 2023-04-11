@@ -92,7 +92,7 @@ export default function AddSubcategory() {
 
                         <div className='flex flex-col py-2'>
                             <label>Choose a Category</label>
-                            <select name="category" onChange={onChange} className='border px-2 py-2 mt-1 w-full rounded-md'>
+                            <select required name="category" onChange={onChange} className='border px-2 py-2 mt-1 w-full rounded-md'>
                                 {catarray.map((cat) => (
                                     <option key={cat.id} value={cat.category}>{cat.category}</option>
                                 ))}
@@ -101,7 +101,7 @@ export default function AddSubcategory() {
 
                         <div className='flex flex-col py-2'>
                             <label>Sub Category</label>
-                            <input className='border p-2 mt-1 rounded-md' type="text" name='subcategory' placeholder='Enter Sub Category' onChange={onChange} />
+                            <input required className='border p-2 mt-1 rounded-md' type="text" name='subcategory' placeholder='Enter Sub Category' onChange={onChange} />
                         </div>
 
 

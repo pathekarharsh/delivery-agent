@@ -66,7 +66,7 @@ export default function AddCategory() {
                         <hr className='w-48 mt-2 border-2 mx-auto' />
                         <div className='flex flex-col py-2'>
                             <label>Enter a Category</label>
-                            <input className='border p-2 mt-2 rounded-md' type="text" name='category' onChange={onChange} placeholder='Enter Category' />
+                            <input required className='border p-2 mt-2 rounded-md' type="text" name='category' onChange={onChange} placeholder='Enter Category' />
                         </div>
                         <button type='submit' className='font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD CATEGORY</button>
                     </form>

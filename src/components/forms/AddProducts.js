@@ -48,14 +48,14 @@ export default function AddProducts() {
 
                         <div className='flex flex-col py-2'>
                             <label>Product Name</label>
-                            <input className='mt-1 border p-2 rounded-md' type="text" name='productname' placeholder='Enter Product Name' {...register('productname', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="text" name='productname' placeholder='Enter Product Name' {...register('productname', { required: true })}/>
                         </div>
                         <p className='text-red-600'> {errors.productname && "Product Name is required"}</p>
 
 
                         <div className='flex flex-col py-2'>
                             <label>Product Price</label>
-                            <input className='mt-1 border p-2 rounded-md' type="number" name='productprice' placeholder='Enter Product Price' {...register('productprice', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="number" name='productprice' placeholder='Enter Product Price' {...register('productprice', { required: true })}/>
                         </div>
                         <p className='text-red-600'>{errors.productprice && "Product Price is required"}</p>
 
@@ -63,7 +63,7 @@ export default function AddProducts() {
                         <div className='flex flex-row py-2'>
                             <div>
                                 <label>Category</label><br />
-                                <select className='mt-1 border px-2 py-2 w-full rounded-md' name="category" {...register('category', { required: true })}>
+                                <select required className='mt-1 border px-2 py-2 w-full rounded-md' name="category" {...register('category', { required: true })}>
                                     {catarray.map((cat) => (
                                         <option key={cat.id} value={cat.category}>{cat.category}</option>
                                     ))}
@@ -72,7 +72,7 @@ export default function AddProducts() {
                             {/* <p className='text-red-600'>{errors.category && "Category is required"}</p> */}
                             <div className='ml-8'>
                                 <label>Subcategory</label><br />
-                                <select className='mt-1 border px-2 py-2 w-full rounded-md' name="subcategory" {...register('subcategory', { required: true })}>
+                                <select required className='mt-1 border px-2 py-2 w-full rounded-md' name="subcategory" {...register('subcategory', { required: true })}>
                                     {subcatarray.map((subcat) => (
                                         <option key={subcat.id} value={subcat.subcategory}>{subcat.subcategory}</option>
                                     ))}
@@ -84,7 +84,7 @@ export default function AddProducts() {
 
                         <div className='flex flex-col py-2'>
                             <label>Upload Product Image</label>
-                            <input className='mt-1 border p-2 rounded-md' type="file" name="productimage" {...register('productimage', { required: true })}/>
+                            <input required className='mt-1 border p-2 rounded-md' type="file" name="productimage" {...register('productimage', { required: true })}/>
                         </div>
                         <p className='text-red-600'>{errors.productimage && "Product Image is required"}</p>
 
