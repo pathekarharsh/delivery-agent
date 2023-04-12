@@ -7,7 +7,7 @@ const Queue = () => {
     return (
         <div className="container">
             <div className="main m-0 p-0">
-                <Navbar />
+                <Navbar pagename="Orders Page" />
                 <Orders />
             </div>
         </div>

@@ -10,7 +10,7 @@ const Modal = ({btnname,compinfo}) => {
     
     return (
         <>
-        {btnname==="DELETE"?<button className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 rounded-md p-2 bg-tailprimary hover:bg-red-500 text-black" onClick={() => setShowModal(true)}>{btnname}</button>:<button className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 px-3 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black" onClick={() => setShowModal(true)}>{btnname}</button>}
+        {btnname==="DELETE"?<button className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 rounded-md p-2 bg-tailtertiary hover:bg-red-500 text-black" onClick={() => setShowModal(true)}>{btnname}</button>:<button className="font-poppins font-bold border-2 w-full mr-2 mt-2 mb-2 px-3 rounded-md py-2 bg-tailtertiary hover:bg-tailtertiary3 text-black" onClick={() => setShowModal(true)}>{btnname}</button>}
 
             {showModal && <MyModal closeModal={closeModal} compinfo={compinfo}/>}
         </>

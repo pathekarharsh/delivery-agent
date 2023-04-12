@@ -10,7 +10,7 @@ const ProductPage = () => {
     return (
         <div className="container">
             <div className="main m-0 p-0">
-                <Navbar />
+                <Navbar pagename="View Product Page"/>
                 <ProductDetails/>
             </div>
         </div>

@@ -19,10 +19,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    max-width: 60rem;
-    max-height: 60rem;
+    max-width: 200rem;
+    max-height: 200rem;
     background-color: white;
-    padding: 2rem 3rem;
+    /* padding: 2rem 3rem; */
     border-radius: 0.5rem;
   }
+  
+
   

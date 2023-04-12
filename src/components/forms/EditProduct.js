@@ -2,21 +2,11 @@ import React from 'react'
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import '../../App.css';
+import Navbar from '../Navbar';
 
 
 
 export default function EditProduct() {
-
-    const { register, handleSubmit,  formState: { errors } } = useForm();
-
-    const [userInfo, setUserInfo] = useState();
-
-    const onSubmit = (data) => {
-        setUserInfo(data);
-        console.log(data);
-    };
-    console.log(errors);
-
 
     const [catarray, setcatarray] = useState([
         { id: 1, category: 'fruits' },
@@ -32,77 +22,145 @@ export default function EditProduct() {
         { id: 4, subcategory: 'orange' },
     ])
 
+    const [brandarray, setbrandarray] = useState([
+        { id: 1, brand: 'ParleG' },
+        { id: 2, brand: 'Amul' },
+        { id: 3, brand: 'Yash' },
+        { id: 4, brand: 'Palekar' },
+    ])
 
-    const productobj={
-        productname: 'Mango-Shake',
-        productprice: 70,
-        productcategory: 'friuts',
-        productsubcategory: 'mango',
-        productdescription: 'Its a shake made from mango',
-        productimage: '',
+    const [uomarray, setuomarray] = useState([
+        { id: 1, uom: 1 },
+        { id: 2, uom: 2 },
+        { id: 3, uom: 3 },
+        { id: 4, uom: 4 },
+    ])
+
+    const [offerarray, setofferarray] = useState([
+        { id: 1, offer: "10 % off" },
+        { id: 2, offer: "20 % off" },
+        { id: 3, offer: "30 % off" },
+        { id: 4, offer: "Buy 1 Get 1" },
+    ])
+
+    const [obj, setobj] = useState({
+        productname: '',
+        productprice: 0,
+        productimage: null,
+        category: '',
+        subcategory: '',
+        brand: '',
+        uom: 0,
+        offer: ''
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(obj);
+    }
+
+    const onDiscard = (e) => {
+        e.preventDefault();
+        setobj({
+            productname: '',
+            productprice: 0,
+            productimage: null,
+            category: '',
+            subcategory: '',
+            brand: '',
+            uom: '',
+            offer: ''
+        });
+    }
+
+    const onChange = (e) => {
+        setobj({ ...obj, [e.target.name]: e.target.value });
     }
 
     return (
-        <div className=''>
-                    {/* <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage'/> */}
+        <>
+            <div className="container">
+                <div className="main m-0 p-0 bg-tailtertiary">
 
-        {/* printing submitted data on screen */}
-        {/* <pre className='text-white'>{JSON.stringify(userInfo,undefined,2)}</pre> */}
+                    <Navbar pagename="Edit Product Page" />
+                    <div className='items-center flex pb-32'>
 
-            <div className='p-2 mx-auto rounded overflow-hidden'>
-                <div className='border border-2 rounded-md max-w-lg mx-auto justify-center shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
-                    <form className=' mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
-                        {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
-                        <h2 className='text-center font-bold font-mono text-2xl'>PRODUCTS</h2>
-                        <hr className='w-36 mt-2 border-2 mx-auto'/>
+                        <div style={{ width: "800px" }} className='mt-4 bg-white border border-2 rounded-md resize-x mx-auto flex shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
+                            <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit}>
+                                <h2 className='text-center font-bold font-mono text-2xl'>PRODUCTS</h2>
+                                <hr className='w-36 mt-2 border-2 mx-auto' />
 
-                        <div className='flex flex-col py-2'>
-                            <label>Product Name</label>
-                            <input className='mt-1 border p-2 rounded-md' type="text" name='productname' value={productobj.productname} placeholder='Enter Product Name' {...register('productname', { required: true })}/>
+                                <div className='flex flex-col py-2'>
+                                    <label>Product Name</label>
+                                    <input required value={obj.productname} className='mt-1 border p-2 rounded-md' type="text" name='productname' placeholder='Enter Product Name' onChange={onChange} />
+                                </div>
+
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Product Price</label>
+                                    <input required value={obj.productprice} className='mt-1 border p-2 rounded-md' type="number" name='productprice' placeholder='Enter Product Price' onChange={onChange} />
+                                </div>
+
+
+                                <div>
+                                    <label>Category</label><br />
+                                    <select required value={obj.category} className='mt-1 border px-2 py-2 w-full rounded-md' name="category" onChange={onChange}>
+                                        {catarray.map((cat) => (
+                                            <option key={cat.id} value={cat.category}>{cat.category}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='my-2'>
+                                    <label>Subcategory</label><br />
+                                    <select required value={obj.subcategory} className='mt-1 border px-2 py-2 w-full rounded-md' name="subcategory" onChange={onChange}>
+                                        {subcatarray.map((subcat) => (
+                                            <option key={subcat.id} value={subcat.subcategory}>{subcat.subcategory}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='my-2'>
+                                    <label>Brand</label><br />
+                                    <select required value={obj.brand} className='mt-1 border px-2 py-2 w-full rounded-md' name="brand" onChange={onChange}>
+                                        {brandarray.map((b) => (
+                                            <option key={b.id} value={b.brand}>{b.brand}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='my-2'>
+                                    <label>UMO(Kg's)</label><br />
+                                    <select required value={obj.uom} className='mt-1 border px-2 py-2 w-full rounded-md' name="uom" onChange={onChange}>
+                                        {uomarray.map((b) => (
+                                            <option key={b.id} value={b.uom}>{b.uom}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='my-2'>
+                                    <label>Offer</label><br />
+                                    <select required value={obj.offer} className='mt-1 border px-2 py-2 w-full rounded-md' name="offer" onChange={onChange}>
+                                        {offerarray.map((b) => (
+                                            <option key={b.id} value={b.offer}>{b.offer}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Upload Product Image</label>
+                                    <input required className='mt-1 border p-2 rounded-md' type="file" value={obj.productimage} name="productimage" onChange={onChange} />
+                                </div>
+
+                                <div className='flex mx-auto mt-2'>
+
+                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-tailprimary text-black' onClick={handleSubmit}>SAVE</button>
+                                    <button className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-red-600 text-black' onClick={onDiscard}>DISCARD</button>
+                                </div>
+
+                            </form>
                         </div>
-                        <p className='text-red-600'> {errors.productname && "Product Name is required"}</p>
-
-
-                        <div className='flex flex-col py-2'>
-                            <label>Product Price</label>
-                            <input className='mt-1 border p-2 rounded-md' type="number" name='productprice' defaultvalue={productobj.productprice} placeholder='Enter Product Price' {...register('productprice', { required: true })}/>
-                        </div>
-                        <p className='text-red-600'>{errors.productprice && "Product Price is required"}</p>
-
-
-                        <div className='flex flex-row py-2'>
-                            <div>
-                                <label>Category</label><br />
-                                <select className='mt-1 border px-2 py-2 w-full rounded-md' defaultvalue={productobj.productcategory} name="category" {...register('category', { required: true })}>
-                                    {catarray.map((cat) => (
-                                        <option key={cat.id} value={cat.category}>{cat.category}</option>
-                                    ))}
-                                </select>
-                            </div>
-                            {/* <p className='text-red-600'>{errors.category && "Category is required"}</p> */}
-                            <div className='ml-8'>
-                                <label>Subcategory</label><br />
-                                <select className='mt-1 border px-2 py-2 w-full rounded-md' defaultvalue={productobj.productsubcategory} name="subcategory" {...register('subcategory', { required: true })}>
-                                    {subcatarray.map((subcat) => (
-                                        <option key={subcat.id} value={subcat.subcategory}>{subcat.subcategory}</option>
-                                    ))}
-                                </select>
-                            </div>
-                            {/* <p className='text-red-600'>{errors.subcategory && "Subcategory is required"}</p> */}
-                        </div>
-
-
-                        <div className='flex flex-col py-2'>
-                            <label>Upload Product Image</label>
-                            <input className='mt-1 border p-2 rounded-md' defaultvalue={productobj.productimage}  type="file" name="productimage" {...register('productimage', { required: true })}/>
-                        </div>
-                        <p className='text-red-600'>{errors.productimage && "Product Image is required"}</p>
-
-                        <button className='font-poppins font-bold border w-full mt-3 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>EDIT PRODUCT</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

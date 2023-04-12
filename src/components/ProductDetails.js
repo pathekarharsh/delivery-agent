@@ -1,8 +1,7 @@
 import React from "react";
 import "./Orders.css";
-import { Link } from "react-router-dom";
 import Modal from "./Modal";
-import SingleProduct from "./SingleProduct";
+import SingleProduct from "./ViewSingleProduct";
 import EditProduct from "./forms/EditProduct";
 
 

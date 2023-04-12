@@ -2,12 +2,13 @@ import React from 'react'
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import '../../App.css';
+import Navbar from '../Navbar';
 
 
 
 export default function AddDeliveryAgent() {
 
-    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [userInfo, setUserInfo] = useState();
 
@@ -18,50 +19,56 @@ export default function AddDeliveryAgent() {
     console.log(errors);
 
     return (
-        <div className='w-full'>
-                    <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage'/>
+        <>
+            <div className="container">
+                <div className="main m-0 p-0 bg-tailtertiary">
 
-        {/* printing submitted data on screen */}
-        <pre className='text-white'>{JSON.stringify(userInfo,undefined,2)}</pre>
+                    <Navbar pagename="Add Delivery Agent Page" />
+                    <div className='h-screen items-center flex pb-32'>
 
-            <div className='mt-8 p-8 h-screen mx-auto rounded overflow-hidden'>
-                <div className='border border-2 rounded-md max-w-lg mx-auto justify-center shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
-                    <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
-                        {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
-                        <h2 className='text-center font-bold font-mono text-2xl'>DELIVERY AGENT</h2>
-                        <hr className='w-36 mt-2 border-2 mx-auto'/>
+                        <div style={{ width: "800px" }} className='mt-4 bg-white border border-2 rounded-md resize-x mx-auto flex shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
 
-                        <div className='flex flex-col py-2'>
-                            <label>Name</label>
-                            <input required className='mt-1 border p-2 rounded-md' type="text" name='name' placeholder='Enter Name' {...register('name', { required: true })}/>
+                            <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
+                                {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
+                                <h2 className='text-center font-bold font-mono text-2xl'>DELIVERY AGENT</h2>
+                                <hr className='w-36 mt-2 border-2 mx-auto' />
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Name</label>
+                                    <input required className='mt-1 border p-2 rounded-md' type="text" name='name' placeholder='Enter Name' {...register('name', { required: true })} />
+                                </div>
+                                <p className='text-red-600'> {errors.name && "Delivery Agent Name is required"}</p>
+
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Email</label>
+                                    <input required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })} />
+                                </div>
+                                <p className='text-red-600'>{errors.email && "Delivery Agent Email is required"}</p>
+
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Contact Number</label>
+                                    <input required className='mt-1 border p-2 rounded-md' type="text" name='contact' placeholder='Enter Contact Number' {...register('contact', { required: true })} />
+                                </div>
+                                <p className='text-red-600'> {errors.contact && "Delivery Agent Contact Number is required"}</p>
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Upload Delivery Agent Image</label>
+                                    <input required className='mt-1 border p-2 rounded-md' type="file" name="agentimage" {...register('agentimage', { required: true })} />
+                                </div>
+                                <p className='text-red-600'>{errors.agentimage && "Delivery Agent Image is required"}</p>
+
+                                <div className='flex mx-auto mt-2'>
+
+                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-tailprimary text-black'>SAVE</button>
+                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-red-600 text-black'>DISCARD</button>
+                                </div>                    </form>
                         </div>
-                        <p className='text-red-600'> {errors.name && "Delivery Agent Name is required"}</p>
-
-
-                        <div className='flex flex-col py-2'>
-                            <label>Email</label>
-                            <input required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })}/>
-                        </div>
-                        <p className='text-red-600'>{errors.email && "Delivery Agent Email is required"}</p>
-
-
-                        <div className='flex flex-col py-2'>
-                            <label>Contact Number</label>
-                            <input required className='mt-1 border p-2 rounded-md' type="text" name='contact' placeholder='Enter Contact Number' {...register('contact', { required: true })}/>
-                        </div>
-                        <p className='text-red-600'> {errors.contact && "Delivery Agent Contact Number is required"}</p>
-
-                        <div className='flex flex-col py-2'>
-                            <label>Upload Delivery Agent Image</label>
-                            <input required className='mt-1 border p-2 rounded-md' type="file" name="agentimage" {...register('agentimage', { required: true })}/>
-                        </div>
-                        <p className='text-red-600'>{errors.agentimage && "Delivery Agent Image is required"}</p>
-
-                        <button className='font-poppins font-bold border w-full mt-3 mb-2 rounded-md py-2 bg-tailprimary hover:bg-tailtertiary text-black'>ADD DELIVERY AGENT</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Orders.css";
-import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import EditDeliveryAgent from "./forms/EditDeliveryAgent";
 import ViewSingleAgent from "./ViewSingleAgent";

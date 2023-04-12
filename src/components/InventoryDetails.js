@@ -1,6 +1,5 @@
 import React from "react";
 import "./Orders.css";
-import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import ViewSingleManager from "./ViewSingleManager";
 import EditInventoryManager from "./forms/EditInventoryManager";
