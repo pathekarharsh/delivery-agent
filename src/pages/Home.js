@@ -12,7 +12,7 @@ export default function Home() {
             {/* <img src="https://thumbs.dreamstime.com/b/flat-lay-composition-overturned-paper-bag-groceries-black-wooden-background-space-text-flat-lay-composition-157615767.jpg" alt="" className='bgimage' /> */}
             <div className='bg-black'>
 
-                <h1 className='p-8  font-bold text-4xl text-center text-white'>Welcome to the Admin Dashboard</h1>
+                <h1 className='p-8  font-bold text-4xl text-center text-white'>Welcome to the Admin Dashboard 2</h1>
             </div>
             <div className='bg-gray-200 w-full'>
 
