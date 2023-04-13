@@ -7,9 +7,16 @@ import Navbar from '../Navbar';
 
 export default function EditUom() {
 
-    
+
+    const [uomarray, setuomarray] = useState([
+        { id: 1, uom: 'kg' },
+        { id: 2, uom: 'g' },
+        { id: 3, uom: 'l' },
+        { id: 4, uom: 'ml' },
+    ])
 
     const [obj, setobj] = useState({
+        uomold: '',
         uom: ''
     })
 
@@ -20,7 +27,10 @@ export default function EditUom() {
 
     const onDiscard = (e) => {
         e.preventDefault();
-        setobj({ uom:'' });
+        setobj({
+            uomold: '',
+            uom: ''
+        });
     }
 
     const onChange = (e) => {
@@ -40,9 +50,17 @@ export default function EditUom() {
                                 <h2 className='text-center font-bold font-mono text-2xl'>Unit Of Measurement</h2>
                                 <hr className='w-56 my-2 border-2 mx-auto' />
 
-                                
+
                                 <div className='flex flex-col py-2'>
-                                    <label>Enter Unit Of Measurement</label>
+                                    <label>Select a UOM</label>
+                                    <select required name="uom" value={obj.uomold} onChange={onChange} className='border px-2 py-2 mt-1 w-full rounded-md'>
+                                        {uomarray.map((cat) => (
+                                            <option key={cat.id} value={cat.uom}>{cat.uom}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='flex flex-col py-2'>
+                                    <label>Enter Updated Unit Of Measurement</label>
                                     <input value={obj.uom} required className='w-full py-1 border mt-2 rounded-md' type="text" name='uom' onChange={onChange} placeholder='Enter Unit Of Measurement' />
 
                                 </div>

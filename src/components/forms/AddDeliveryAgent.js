@@ -6,17 +6,44 @@ import Navbar from '../Navbar';
 
 
 
+
 export default function AddDeliveryAgent() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [userInfo, setUserInfo] = useState();
+    const [obj, setobj] = useState({
+        firstname: '',
+        lastname: '',
+        email: '',
+        contact: '',
+        agentimage: null,
+        city: '',
+        address: '',
+        state: ''
+    })
 
-    const onSubmit = (data) => {
-        setUserInfo(data);
-        console.log(data);
-    };
-    console.log(errors);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(obj);
+    }
+
+    const onDiscard = (e) => {
+        e.preventDefault();
+        setobj({
+            firstname: '',
+            lastname: '',
+            email: '',
+            contact: '',
+            agentimage: null,
+            city: '',
+            address: '',
+            state: ''
+        });
+    }
+
+    const onChange = (e) => {
+        setobj({ ...obj, [e.target.name]: e.target.value });
+    }
+
 
     return (
         <>
@@ -24,46 +51,64 @@ export default function AddDeliveryAgent() {
                 <div className="main m-0 p-0 bg-tailtertiary">
 
                     <Navbar pagename="Add Delivery Agent Page" />
-                    <div className='h-screen items-center flex pb-32'>
+                    <div className='mt-4 items-center flex pb-32'>
 
                         <div style={{ width: "800px" }} className='mt-4 bg-white border border-2 rounded-md resize-x mx-auto flex shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
 
-                            <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit(onSubmit)}>
-                                {/* <h2 className='text-4xl font-bold text-center py-6 font-mono flex justify-center'>Groccery <img src="https://cdn-icons-png.flaticon.com/512/3724/3724763.png" alt="plant image" className='w-10 pl-2' /></h2> */}
+                            <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit}>
                                 <h2 className='text-center font-bold font-mono text-2xl'>DELIVERY AGENT</h2>
                                 <hr className='w-36 mt-2 border-2 mx-auto' />
 
                                 <div className='flex flex-col py-2'>
-                                    <label>Name</label>
-                                    <input required className='mt-1 border p-2 rounded-md' type="text" name='name' placeholder='Enter Name' {...register('name', { required: true })} />
+                                    <label>Firstname</label>
+                                    <input value={obj.firstname} className='mt-1 border p-2 rounded-md' type="text" name='firstname' placeholder='Enter First Name' onChange={onChange} />
                                 </div>
-                                <p className='text-red-600'> {errors.name && "Delivery Agent Name is required"}</p>
+                                <div className='flex flex-col py-2'>
+                                    <label>Lastname</label>
+                                    <input value={obj.lastname} required className='mt-1 border p-2 rounded-md' type="text" name='lastname' placeholder='Enter Last Name' onChange={onChange} />
+                                </div>
 
 
                                 <div className='flex flex-col py-2'>
                                     <label>Email</label>
-                                    <input required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' {...register('email', { required: true })} />
+                                    <input value={obj.email} required className='mt-1 border p-2 rounded-md' type="email" name='email' placeholder='Enter Email' onChange={onChange} />
                                 </div>
-                                <p className='text-red-600'>{errors.email && "Delivery Agent Email is required"}</p>
 
 
                                 <div className='flex flex-col py-2'>
                                     <label>Contact Number</label>
-                                    <input required className='mt-1 border p-2 rounded-md' type="text" name='contact' placeholder='Enter Contact Number' {...register('contact', { required: true })} />
+                                    <input value={obj.contact} required className='mt-1 border p-2 rounded-md' type="tel" name='contact' placeholder='Enter Contact Number' onChange={onChange} />
                                 </div>
-                                <p className='text-red-600'> {errors.contact && "Delivery Agent Contact Number is required"}</p>
 
                                 <div className='flex flex-col py-2'>
                                     <label>Upload Delivery Agent Image</label>
-                                    <input required className='mt-1 border p-2 rounded-md' type="file" name="agentimage" {...register('agentimage', { required: true })} />
+                                    <input value={obj.agentimage} required className='mt-1 border p-2 rounded-md' type="file" name="agentimage" onChange={onChange} />
                                 </div>
-                                <p className='text-red-600'>{errors.agentimage && "Delivery Agent Image is required"}</p>
+
+                                <div className='flex flex-col py-2'>
+                                    <label>city</label>
+                                    <input value={obj.city} required className='mt-1 border p-2 rounded-md' type="text" name='city' placeholder='Enter City' onChange={onChange} />
+                                </div>
+
+                                <div className='flex flex-col py-2'>
+                                    <label>Address</label>
+                                    <textarea onChange={onChange} value={obj.address} rows="3" name="address" placeholder='Enter address' className='mt-1 border p-2 rounded-md'>
+
+                                    </textarea>
+                                </div>
+
+                                <div className='flex flex-col py-2'>
+                                    <label>state</label>
+                                    <input value={obj.state} required className='mt-1 border p-2 rounded-md' type="text" name='state' placeholder='Enter State' onChange={onChange} />
+                                </div>
+
 
                                 <div className='flex mx-auto mt-2'>
 
-                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-tailprimary text-black'>SAVE</button>
-                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-red-600 text-black'>DISCARD</button>
-                                </div>                    </form>
+                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-tailprimary text-black' onClick={handleSubmit}>SAVE</button>
+                                    <button type='submit' className='m-2 font-poppins font-bold border w-full mt-2 mb-2 rounded-md py-2 bg-tailtertiary3 hover:bg-red-600 text-black' onClick={onDiscard}>DISCARD</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

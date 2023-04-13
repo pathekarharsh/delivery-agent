@@ -9,7 +9,7 @@ const ProductPage = () => {
   
     return (
         <div className="container">
-            <div className="main m-0 p-0">
+            <div className="main m-0 p-0 bg-tailtertiary">
                 <Navbar pagename="View Product Page"/>
                 <ProductDetails/>
             </div>

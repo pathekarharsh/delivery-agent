@@ -52,7 +52,7 @@ export default function EditSubCategory() {
                     <div className='h-screen items-center flex pb-32'>
 
                         <div style={{ width: "800px" }} className='mt-4 bg-white border border-2 rounded-md resize-x mx-auto flex shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
-                            <form className='w-full mx-auto bg-white p-4' onSubmit={handleSubmit}>
+                            <form className='mx-auto w-full bg-white p-4' onSubmit={handleSubmit}>
                                 <h2 className='text-center font-bold font-mono text-2xl'>SUB-CATEGORIES</h2>
                                 <hr className='w-56 my-2 border-2 mx-auto' />
 
@@ -64,9 +64,17 @@ export default function EditSubCategory() {
                                         ))}
                                     </select>
                                 </div>
+                                <div className='my-2'>
+                                    <label>Subcategory</label><br />
+                                    <select required value={obj.subcategory} className='mt-1 border px-2 py-2 w-full rounded-md' name="subcategory" onChange={onChange}>
+                                        {subcatarray.map((subcat) => (
+                                            <option key={subcat.id} value={subcat.subcategory}>{subcat.subcategory}</option>
+                                        ))}
+                                    </select>
+                                </div>
 
                                 <div className='flex flex-col py-2'>
-                                    <label>Sub Category</label>
+                                    <label>Enter Updated Sub Category</label>
                                     <input required className='border p-2 mt-1 rounded-md' value={obj.subcategory} type="text" name='subcategory' placeholder='Enter Sub Category' onChange={onChange} />
                                 </div>
                                 <div className='flex flex-col py-2'>

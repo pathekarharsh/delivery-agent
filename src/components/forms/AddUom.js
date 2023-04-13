@@ -42,7 +42,7 @@ export default function AddUom() {
 
                                 
                                 <div className='flex flex-col py-2'>
-                                    <label>Select Header Color</label>
+                                    <label>Enter Unit Of Measurement</label>
                                     <input value={obj.uom} required className='w-full py-2 border mt-2 rounded-md' type="text" name='uom' onChange={onChange} placeholder='Enter Unit Of Measurement' />
 
                                 </div>

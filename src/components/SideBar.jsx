@@ -46,7 +46,7 @@ const SideBar = ({ children }) => {
             className={`sidebar `}
           >
             <div className="top_section">
-              <h2 className="py-4 px-6 ml-2 font-bold rounded-sm text-center bg-tailtertiary3 text-black flex">ADMIN DASHBOARD</h2>
+              <h2 className="py-8 px-6 w-full border-2 border-blue-500 font-bold rounded-sm text-center bg-tailtertiary3 text-black flex">ADMIN DASHBOARD</h2>
 
             </div>
 
@@ -54,8 +54,8 @@ const SideBar = ({ children }) => {
             {/* Home and Logout button */}
             <div>
               <div className="flex justify-center px-2 text-black font-bold">
-                <button className="mx-2 bg-tailtertiary py-2 hover:bg-tailtertiary3 px-3 rounded-sm" onClick={() => navigate("/dashboard/home")}>HOME</button>
-                <button className="mx-2 py-2 bg-tailtertiary hover:bg-red-600 px-3 rounded-sm" onClick={() => navigate("/")}>LOGOUT</button>
+                <button className=" bg-tailtertiary py-2 hover:bg-tailtertiary3 w-full rounded-sm" onClick={() => navigate("/dashboard/home")}>HOME</button>
+                <button className="ml-2 py-2 bg-tailtertiary hover:bg-red-600 w-full rounded-sm" onClick={() => navigate("/")}>LOGOUT</button>
               </div>
             </div>
 
@@ -83,12 +83,14 @@ const SideBar = ({ children }) => {
               <MyNavitem path="/dashboard/addvendor" routename="Add Vendor" icon={<GrAddCircle />} />
               
               <MyNavitem path="/dashboard/editvendor" routename="Edit Vendor" icon={<GrAddCircle />} />
+              <MyNavitem path="/dashboard/editdeliveryagent" routename="Edit Delivery Agent" icon={<GrAddCircle />} />
+              <MyNavitem path="/dashboard/editinventorymanager" routename="Edit Inventory Manager" icon={<GrAddCircle />} />
 
               <h2 className="border-2 border-black justify-center flex  mx-1 py-2 bg-tailtertiary justify-center">View Menu</h2>
               <MyNavitem path="/dashboard/viewdeliveryagents" routename="View Delivery Agents" icon={<VscPreview />} />
               <MyNavitem path="/dashboard/viewinventorymanagers" routename="View Inventory Managers" icon={<VscPreview />} />
               <MyNavitem path="/dashboard/viewvendors" routename="View Vendors" icon={<VscPreview />} />
-              <MyNavitem path="/dashboard/vieworders" routename="View Orders" icon={<MdDeliveryDining />} />
+
 
 
 

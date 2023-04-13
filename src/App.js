@@ -12,7 +12,6 @@ import AddProducts from './components/forms/AddProducts';
 import SideBar from './components/SideBar';
 import AddCategory from './components/forms/AddCategory';
 import AddSubcategory from './components/forms/AddSubcategory';
-import OrderPage from './pages/OrderPage';
 import DeliveryPage from './pages/DeliveryPage';
 import InventoryPage from './pages/InventoryPage';
 import EditDeliveryAgent from './components/forms/EditDeliveryAgent';
@@ -26,20 +25,20 @@ import AddVendor from './components/forms/AddVendor';
 import EditVendor from './components/forms/EditVendor';
 import AddUom from './components/forms/AddUom';
 import EditUom from './components/forms/EditUom';
+import VendorPage from "./pages/VendorPage";
 
 
 Modal.setAppElement('#root');
 
 
 function App() {
-  
+
 
 
   return (
     <div className='flex font-poppins'>
 
       <Router>
-        {/* <SideBar /> */}
         <Routes>
           <Route exact path='/dashboard' element={<SideBar />} >
 
@@ -55,22 +54,20 @@ function App() {
             <Route exact path="addinventorymanager" element={<AddInventoryManager />} />
             <Route exact path="viewinventorymanagers" element={<InventoryPage />} />
 
-            <Route exact path="vieworders" element={<OrderPage />} />
-            <Route exact path="updateproduct" />
-            <Route exact path="updateinventorymanager" />
-            <Route exact path="updatedeliveryagent" />
+            <Route exact path="viewvendors" element={<VendorPage />} />
+
 
             <Route exact path="editdeliveryagent" element={<EditDeliveryAgent />} />
             <Route exact path="editinventorymanager" element={<EditInventoryManager />} />
             <Route exact path="editproduct" element={<EditProduct />} />
-            <Route exact path="editcategory" element={<EditCategory/>} />
-            <Route exact path="editsubcategory" element={<EditSubCategory/>} />
-            <Route exact path="addbrand" element={<AddBrand/>} />
-            <Route exact path="addvendor" element={<AddVendor/>} />
-            <Route exact path="editbrand" element={<EditBrand/>} />
-            <Route exact path="editvendor" element={<EditVendor/>} />
-            <Route exact path="adduom" element={<AddUom/>} />
-            <Route exact path="edituom" element={<EditUom/>} />  
+            <Route exact path="editcategory" element={<EditCategory />} />
+            <Route exact path="editsubcategory" element={<EditSubCategory />} />
+            <Route exact path="addbrand" element={<AddBrand />} />
+            <Route exact path="addvendor" element={<AddVendor />} />
+            <Route exact path="editbrand" element={<EditBrand />} />
+            <Route exact path="editvendor" element={<EditVendor />} />
+            <Route exact path="adduom" element={<AddUom />} />
+            <Route exact path="edituom" element={<EditUom />} />
           </Route>
 
 
@@ -78,14 +75,6 @@ function App() {
 
         </Routes>
       </Router>
-      {/* <Modal
-        isOpen={isModalOpen}
-        style={customStyles}
-      >
-        <h2>are you sure to delete this user?</h2>
-        <button onClick={setResult(true)}>Yes</button>
-        <button onClick={setResult(false)}>No</button>
-      </Modal> */}
     </div>
 
   );

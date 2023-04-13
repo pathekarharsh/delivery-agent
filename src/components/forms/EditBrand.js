@@ -14,6 +14,13 @@ export default function EditBrand() {
         { id: 4, brand: 'Vendor4' },
     ])
 
+    const [brandarray, setbrandarray] = useState([
+        { id: 1, brand: 'Brand1' },
+        { id: 2, brand: 'Brand2' },
+        { id: 3, brand: 'Brand3' },
+        { id: 4, brand: 'Brand4' },
+    ])
+
 
     const [obj, setobj] = useState({
         productname: '',
@@ -50,7 +57,15 @@ export default function EditBrand() {
                                 <h2 className='text-center font-bold font-mono text-2xl'>Brands</h2>
                                 <hr className='w-56 my-2 border-2 mx-auto' />
                                 <div className='flex flex-col py-2'>
-                                    <label>Enter Product Name</label>
+                                    <label>Select Brand</label>
+                                    <select required name="brand" value={obj.brand} onChange={onChange} className='border px-2 py-2 mt-1 w-full rounded-md'>
+                                        {brandarray.map((cat) => (
+                                            <option key={cat.id} value={cat.brand}>{cat.brand}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='flex flex-col py-2'>
+                                    <label>Enter Updated Brand Name</label>
                                     <input required className='border p-2 mt-1 rounded-md' type="text" name='productname' value={obj.productname} placeholder='Enter Brand Name' onChange={onChange} />
                                 </div>
 

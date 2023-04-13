@@ -7,6 +7,14 @@ import Navbar from '../Navbar';
 
 export default function EditCategory() {
 
+
+    const [catarray, setcatarray] = useState([
+        { id: 1, category: 'fruits' },
+        { id: 2, category: 'vegetables' },
+        { id: 3, category: 'dairy' },
+        { id: 4, category: 'meat' },
+    ])
+
     
 
     const [catobj, setcatobj] = useState({ category: '',color:'',subcatallowed:0 });
@@ -38,28 +46,26 @@ export default function EditCategory() {
 
                         <div style={{ width: "800px" }} className='mt-4 bg-white border border-2 rounded-md resize-x mx-auto flex shadow-[0_20px_50px_rgba(8,_100,_150,_0.5)]'>
 
-                            <form className='mx-auto p-4' onSubmit={handleSubmit}>
+                            <form className='w-full mx-auto p-4' onSubmit={handleSubmit}>
                                 <h2 className='text-center text-2xl'>CATEGORIES</h2>
                                 <hr className='mt-2 w-48 border-2 mx-auto' />
-                                <div className='flex py-4'>
-                                    <div className='flex-col '>
-
-                                        <label className='py-3 font-bold'>Enter a Category : </label>
-                                    </div>
-                                    <div className='flex-col justify-center'>
-
-                                        <input value={catobj.category} style={{ width: "400px" }} required className='ml-4 p-2 resize-x border mt-2 rounded-md' type="text" name='category' onChange={onChange} placeholder='Enter Category' />
-                                    </div>
+                                <div className='flex flex-col py-2'>
+                                    <label>Choose a Category</label>
+                                    <select required name="category" value={catobj.category} onChange={onChange} className='border px-2 py-2 mt-1 w-full rounded-md'>
+                                        {catarray.map((cat) => (
+                                            <option key={cat.id} value={cat.category}>{cat.category}</option>
+                                        ))}
+                                    </select>
                                 </div>
-                                <div className='flex py-2 '>
-                                    <div className='flex-col justify-center'>
+                                <div className='flex flex-col py-2'>
+                                        <label>Enter Updated Category : </label>
+                                        <input value={catobj.category}  required className='p-2 resize-x border mt-2 rounded-md' type="text" name='category' onChange={onChange} placeholder='Enter Category' />
+                                </div>
+                                <div className='flex flex-col py-2'>
 
-                                        <label className='py-3 font-bold'>Select Header Color : </label>
-                                    </div>
-                                    <div className='flex-col justify-center'>
+                                        <label>Select Header Color : </label>
 
-                                        <input value={catobj.color} style={{ width: "400px" }} required className='ml-4 h-8 p-2 resize-x border mt-2 rounded-md' type="color" name='color' onChange={onChange} placeholder='Enter Category' />
-                                    </div>
+                                        <input value={catobj.color} required className='w-full h-8 p-2 resize-x border mt-2 rounded-md' type="color" name='color' onChange={onChange} placeholder='Enter Category' />
                                 </div>
                                 <div className='flex py-2'>
                                     <div className='flex-col justify-center'>

@@ -18,7 +18,8 @@ export default function AddSubcategory() {
     const [obj, setobj] = useState({
         category: '',
         subcategory: '',
-        color: ''
+        color: '',
+        productcatallowed:0
     })
 
     const handleSubmit = (e) => {
@@ -28,7 +29,7 @@ export default function AddSubcategory() {
 
     const onDiscard = (e) => {
         e.preventDefault();
-        setobj({ category: '',subcategory:'',  color: '' });
+        setobj({ category: '',subcategory:'',  color: '', productcatallowed:0 });
     }
 
     const onChange = (e) => {
@@ -65,6 +66,15 @@ export default function AddSubcategory() {
                                     <label>Select Header Color</label>
                                     <input value={obj.color} required className='w-full py-1 border mt-2 rounded-md' type="color" name='color' onChange={onChange} placeholder='Enter Category' />
 
+                                </div>
+                                <div className='flex py-2'>
+                                    <div className='flex-col justify-center'>
+
+                                        <label className='py-3 font-bold'>Product Allowed : yes no toggle button</label>
+                                    </div>
+                                    <div className='flex-col justify-center'>
+                                        <input required value={obj.productcatallowed} type="" name="productcatallowed" id="productcatallowed" />
+                                    </div>
                                 </div>
                                 <div className='flex mx-auto mt-2'>
 
