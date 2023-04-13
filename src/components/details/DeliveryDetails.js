@@ -1,8 +1,8 @@
 import React from "react";
 import "./Orders.css";
-import Modal from "./Modal";
-import EditDeliveryAgent from "./forms/EditDeliveryAgent";
-import ViewSingleAgent from "./ViewSingleAgent";
+import Modal from "../Modal";
+import EditDeliveryAgent from "../forms/EditDeliveryAgent";
+import ViewSingleAgent from "../viewsingle/ViewSingleAgent";
 
 const info = [
   {

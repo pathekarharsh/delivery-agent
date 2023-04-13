@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import InventoryDetails from "../components/InventoryDetails";
-
+import InventoryDetails from "../components/details/InventoryDetails";
 
 const InventoryPage = () => {
 

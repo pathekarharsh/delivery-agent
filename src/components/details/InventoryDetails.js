@@ -1,9 +1,8 @@
 import React from "react";
 import "./Orders.css";
-import Modal from "./Modal";
-import ViewSingleManager from "./ViewSingleManager";
-import EditInventoryManager from "./forms/EditInventoryManager";
-
+import Modal from "../Modal";
+import EditInventoryManager from "../forms/EditInventoryManager";
+import ViewSingleManager from "../viewsingle/ViewSingleManager";
 
 const info = [
   {

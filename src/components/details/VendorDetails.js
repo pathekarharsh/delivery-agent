@@ -1,9 +1,8 @@
 import React from "react";
 import "./Orders.css";
-import Modal from "./Modal";
-import EditVendor from "./forms/EditVendor";
-import ViewSingleVendor from "./ViewSingleVendor";
-
+import Modal from "../Modal";
+import EditVendor from "../forms/EditVendor";
+import ViewSingleVendor from "../viewsingle/ViewSingleVendor";
 
 const info = [
     {

@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import DeliveryDetails from "../components/DeliveryDetails";
-
+import DeliveryDetails from "../components/details/DeliveryDetails";
 
 const DeliveryPage = () => {
 
